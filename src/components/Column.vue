@@ -75,6 +75,7 @@
     />
   </Modal>
 </template>
+
 <script setup lang="ts">
 import { ACTIONS, TYPES, type Column, type TRANSFER_DATA } from "@/types";
 import Draggable from "./common/Draggable.vue";
