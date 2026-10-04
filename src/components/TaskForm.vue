@@ -21,6 +21,34 @@
       class="p-2 border-2 rounded-sm border-gray-300"
     />
     <ErrorMessage name="description" class="text-red-700" />
+    <label for="category">Category</label>
+    <Field
+      id="category"
+      as="select"
+      name="category"
+      class="p-2 border-2 rounded-sm border-gray-200"
+    >
+      <option value="Design">Design</option>
+      <option value="Development">Development</option>
+      <option value="Testing">Testing</option>
+      <option value="Deployment">Deployment</option>
+      <option value="Building">Building</option>
+      <option value="Research">Research</option>
+    </Field>
+    <ErrorMessage name="category" class="text-red-700" />
+    <label for="status">Status</label>
+    <Field
+      id="status"
+      as="select"
+      name="status"
+      class="p-2 border-2 rounded-sm border-gray-200"
+    >
+      <option value="To Do">To Do</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Review">Review</option>
+      <option value="Done">Done</option>
+    </Field>
+    <ErrorMessage name="status" class="text-red-700" />
     <button type="submit">Submit</button>
   </Form>
 </template>
@@ -49,6 +77,9 @@ onMounted(() => {
   if (props.action === ACTIONS.UPDATE_TASK) {
     taskForm.value.setFieldValue("name", props.task?.name);
     taskForm.value.setFieldValue("description", props.task?.description);
+    taskForm.value.setFieldValue("category", props.task?.category);
+    taskForm.value.setFieldValue("status", props.task?.status);
+
   }
 });
 
@@ -59,12 +90,16 @@ function onSubmit(values: any) {
     kanbanStore.addTaskToColumn(props.columnId, {
       name: values.name,
       description: values.description,
+      category: values.category,
+      status: values.status,
     });
   } else if (props.action === ACTIONS.UPDATE_TASK && props.task) {
     let updatedTask = {
       taskId: props.task.taskId,
       name: values.name,
       description: values.description,
+      category: values.category,
+      status: values.status,
     };
 
     kanbanStore.updateTask(props.columnId, updatedTask);

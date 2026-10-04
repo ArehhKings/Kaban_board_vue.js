@@ -29,7 +29,7 @@ export function deleteColumn(columnId: Column["columnId"]) {
 
 export function addTaskToColumn(
   columnId: Column["columnId"],
-  payload: Pick<Task, "name" | "description">
+  payload: Pick<Task, "name" | "description" | "category" | "status">
 ) {
   let column = STORE.value.find((column) => column.columnId === columnId);
 
@@ -39,6 +39,8 @@ export function addTaskToColumn(
     taskId: uuidv4(),
     name: payload.name,
     description: payload.description,
+    category: "To Do",
+    status: "To Do",
   });
 }
 

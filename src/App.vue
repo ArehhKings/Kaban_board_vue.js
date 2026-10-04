@@ -2,6 +2,7 @@
 import Column from "./components/Column.vue";
 import Navbar from "./components/Navbar.vue";
 import { STORE } from "./stores/kanbanStore";
+// import Footer from "./components/Footer.vue";
 </script>
 
 <template>
@@ -10,11 +11,12 @@ import { STORE } from "./stores/kanbanStore";
     <div class="flex-1 flex gap-4 px-3 overflow-x-auto">
       <Column v-for="column of STORE" :key="column.columnId" :column="column" />
     </div>
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <style>
 #app {
-  @apply select-none h-screen bg-gray-500;
+  @apply select-none h-screen bg-slate-950;
 }
 </style>

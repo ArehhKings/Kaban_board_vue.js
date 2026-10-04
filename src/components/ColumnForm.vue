@@ -13,7 +13,7 @@
       class="p-2 border-2 rounded-sm border-gray-300"
     />
     <ErrorMessage name="name" class="text-red-700" />
-    <button type="submit">Submit</button>
+    <button class="px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white rounded" type="submit">Submit</button>
   </Form>
 </template>
 <script setup lang="ts">

@@ -22,6 +22,11 @@
         <div></div>
       </div>
       <p class="w-full mt-1 text-sm text-gray-400">{{ task.description }}</p>
+      <div class="flex justify-between mt-3"> 
+          <span class="text-xs rounded-xl p-1 bg-green-200">{{ task.category }}</span>
+          <span class="text-xs rounded-xl p-1 bg-blue-200">{{ task.status }}</span>
+      </div>
+
     </Draggable>
   </DropZone>
 
