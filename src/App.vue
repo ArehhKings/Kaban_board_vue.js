@@ -2,7 +2,7 @@
 import Column from "./components/Column.vue";
 import Navbar from "./components/Navbar.vue";
 import { STORE } from "./stores/kanbanStore";
-// import Footer from "./components/Footer.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import { STORE } from "./stores/kanbanStore";
     <div class="flex-1 flex gap-4 px-3 overflow-x-auto">
       <Column v-for="column of STORE" :key="column.columnId" :column="column" />
     </div>
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
