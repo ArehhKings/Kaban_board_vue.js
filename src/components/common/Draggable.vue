@@ -1,13 +1,3 @@
-<template>
-  <div
-    draggable="true"
-    @dragstart.self="onDrag"
-    @dragover.prevent
-    @dragenter.prevent
-  >
-    <slot />
-  </div>
-</template>
 <script setup lang="ts">
 import { type PropType } from "vue";
 import type { TRANSFER_DATA } from "@/types";
@@ -28,3 +18,15 @@ function onDrag(e: DragEvent) {
   }
 }
 </script>
+
+
+<template>
+  <div
+    draggable="true"
+    @dragstart.self="onDrag"
+    @dragover.prevent
+    @dragenter.prevent
+  >
+    <slot />
+  </div>
+</template>
